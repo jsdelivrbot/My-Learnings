@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Ionicon from 'react-ionicons';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -10,10 +11,11 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-      <input
-      value={this.state.term}
-      onChange={event => this.onInputChange(event.target.value)} />
-      <Ionicon icon="ion-search"></Ionicon>
+      <Ionicon icon="ion-ios-search-strong" fontSize="30px" />
+        <input
+          value={this.state.term}
+          onChange={event => this.onInputChange(event.target.value)} />
+        <Ionicon icon="ion-search"></Ionicon>
       </div>
       );
     }
