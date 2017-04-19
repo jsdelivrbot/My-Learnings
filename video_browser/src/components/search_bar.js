@@ -11,19 +11,27 @@ class SearchBar extends Component {
   render() {
     return (
       <div className="search-bar">
-      <Ionicon icon="ion-ios-search-strong" fontSize="30px" />
-        <input
-          value={this.state.term}
-          onChange={event => this.onInputChange(event.target.value)} />
-        <Ionicon icon="ion-search"></Ionicon>
+
+      
+      <input 
+      placeholder = 'Search..'
+      value={this.state.term}
+      onChange={event => this.onInputChange(event.target.value)} />
+
+      <button class='button button-search'>
+      <Ionicon icon="ion-ios-search-strong" />
+      </button>
       </div>
       );
-    }
-
-    onInputChange(term) {
-      this.setState({term});
-      this.props.onSearchTermChange(term);
-    }
   }
 
-  export default SearchBar;
+  onInputChange(term) {
+    this.setState({term});
+    this.props.onSearchTermChange(term);
+  }
+}
+
+export default SearchBar;
+
+
+

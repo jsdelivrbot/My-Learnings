@@ -7,6 +7,19 @@
   width: 75%;
 }
 
+.search-bar input placeholder {
+  margin-left: :5px;
+}
+
+.button-search {
+  /*text-align: right;
+  height: 20px;
+   margin: 30px;
+   float: right;*/
+   border-left-width:0;
+   left:-2px;
+}
+
 .video-item img {
   max-width: 64px;
 }
