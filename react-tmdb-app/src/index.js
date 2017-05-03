@@ -13,25 +13,34 @@ class App extends Component {
 		};
 	}
 
+	getMovieData(term) {
+		axios.get(`https://api.themoviedb.org/3/movie/${term}?&api_key=e4d80514cfeefffbb9a01a3338203117`)
+		.then(res => {
+			let movie = res.data;
+			console.log("movie", movie);
+			this.setState({
+				movieID: movie.id,
+				original_title: movie.original_title,
+				tagline: movie.tagline,
+				overview: movie.overview,
+				poster: movie.poster_path,
+				backdrop: movie.backdrop_path
+			});
+		});
+	}
+
 	componentDidMount() {
-		axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieID}?&api_key=e4d80514cfeefffbb9a01a3338203117`)
-      	.then(res => {
-      		let movie = res.data;
-        	this.setState({
-        		movieID: movie.id,
-        		title: movie.original_title
-        	});
-      	});
- 	 }
+		this.getMovieData(this.state.movieID);
+	}
 
 	render() {
-			return (
-				<div>
-					<SearchBar />
-					<MovieDetail data={this.state} />
-				</div>
+		return (
+			<div>
+				<SearchBar onSearchTermChange={this.getMovieData} />
+				<MovieDetail movie={this.state} />
+			</div>
 			);
 		}
 	}
 
-ReactDOM.render(<App />, document.querySelector('.container'));
+	ReactDOM.render(<App />, document.querySelector('.container'));

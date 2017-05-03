@@ -1,10 +1,25 @@
 import React, {Component} from 'react';
 
-export default class MovieDetail extends Component {
+class MovieDetail extends Component {
 	render() {
-		let title = this.props.data.title;
+		let data = this.props.movie;
+		let posterImage = 'https://image.tmdb.org/t/p/w500' + data.poster,
+			backdropImage = 'https://image.tmdb.org/t/p/original' + data.backdrop;
+
 		return (
-				<div>{title}</div>
-			);
+			<div>
+				<div>
+					<h1>{data.original_title}</h1>
+						<span>{data.tagline}</span>
+					<p>{data.overview}</p>
+				</div>
+
+				<div>
+					<img src={posterImage} />
+				</div>
+			</div>
+		);
 	}
 }
+
+export default MovieDetail;
