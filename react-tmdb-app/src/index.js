@@ -24,7 +24,14 @@ class App extends Component {
 				tagline: movie.tagline,
 				overview: movie.overview,
 				poster: movie.poster_path,
-				backdrop: movie.backdrop_path
+				homepage: movie.homepage,
+        		poster: movie.poster_path,
+        		genre: movie.genres,
+        		release: movie.release_date,
+        		vote: movie.vote_average,
+        		runtime: movie.runtime,
+        		revenue: movie.revenue,
+        		backdrop: movie.backdrop_path
 			});
 		});
 	}
