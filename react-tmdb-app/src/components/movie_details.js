@@ -2,12 +2,19 @@ import React, {Component} from 'react';
 
 class MovieDetail extends Component {
 	render() {
+		console.log("render of MovieDetail", this.props.movie);
 		let data = this.props.movie;
-		let genres = data.genre,
+
+		if(!data.original_title) {
+			return <div>Loading...</div>
+		}
+
+		let genres = data.genre[0].name,
           	totalRevenue = data.revenue,
           	noData = '-',
-			posterImage = 'https://image.tmdb.org/t/p/w500' + data.poster,
-			backdropImage = 'https://image.tmdb.org/t/p/original' + data.backdrop;
+			posterImage = 'https://image.tmdb.org/t/p/w500' + data.poster;
+
+		this.backdropImage = 'https://image.tmdb.org/t/p/original' + data.backdrop;
 
 	// conditional statements for no data for votes
        	if (data.vote === 'undefined' || data.vote === 0) {
@@ -42,7 +49,9 @@ class MovieDetail extends Component {
    }
 
   componentDidUpdate() {
-    document.body.style.backgroundImage = 'url(' + backdropImage + ')';
+  	console.log('didMount of movie detail', this.backdropImage)
+    // document.body.style.backgroundImage = 'url(' + this.backdropImage + ')';
+        document.body.style.backgroundImage = 'url(https://image.tmdb.org/t/p/original' + this.props.movie.backdrop + ')';
   }
 }
 

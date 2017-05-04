@@ -17,7 +17,7 @@ class App extends Component {
 		axios.get(`https://api.themoviedb.org/3/movie/${term}?&api_key=e4d80514cfeefffbb9a01a3338203117`)
 		.then(res => {
 			let movie = res.data;
-			console.log("movie", movie);
+			console.log("movie response from axios", movie);
 			this.setState({
 				movieID: movie.id,
 				original_title: movie.original_title,
@@ -41,6 +41,7 @@ class App extends Component {
 	}
 
 	render() {
+		console.log('render of main');
 		return (
 			<div>
 				<SearchBar onSearchTermChange={this.getMovieData} />
