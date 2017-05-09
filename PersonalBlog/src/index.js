@@ -21,7 +21,7 @@ const createStoreWithMiddleware = applyMiddleware()(createStore);
 ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<BrowserRouter>
-			<Route path="/hello" component={Hello} /> //Creating instance of route for 2 test components
+			<Route path="/hello" component={Hello} /> 
     		<Route path="/goodbye" component={Goodbye} /> 
     	</BrowserRouter>
     </Provider>
