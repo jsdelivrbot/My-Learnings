@@ -1,4 +1,4 @@
-####Popup Image - Extension
+#### Popup Image - Extension
 
 Developed elementary chrome extension that will fetch an image from Google using the current page's URL as a search term.
 
