@@ -1,0 +1,135 @@
+body {
+  background-color: #F8F9FB;
+	margin:0;
+  font-family: 'Avenir','Nunito Sans', sans-serif;
+ }
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+  text-align: left;
+  font-weight: bolder;
+      font-size: 90%;
+}
+
+.stickyTop{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  margin:5px;
+    border-bottom: 2px solid white; 
+}
+
+.topnav a:hover {
+  border-bottom: 2px solid grey; 
+  transition: 500ms ease;
+}
+
+.topnav a.active {
+  border-bottom: 2px solid black; 
+}
+
+.topbreak {
+height:5px;
+  background-color: white;
+  padding: 0px;
+  		margin:0;
+  }
+
+.yellowbox {
+  background-color: yellow;
+  margin:0;
+  height:80vh;
+  min-height:100px;
+  padding-top: 10vh;
+  }
+
+  .caretDiv {
+  background-color: yellow;
+  margin:0;
+  padding-bottom: 3px;
+  }
+  
+  .snapsvg{
+    display: block;
+    margin: auto;
+    width: 15vw;
+    height: 15vw;
+    padding-top: 55px;
+    }
+    
+     
+  .caretsvg{
+    display: block;
+    margin: auto;
+    width: 5vw;
+  }
+
+.ulFooter{
+line-height: 2em;
+list-style: none;
+  position: relative;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    padding-right: 6.25%;
+    font-weight: lighter;
+    color: grey;
+    font-size: 90%;   
+}
+.ulFooter a{
+text-decoration: none;
+color: inherit;
+}
+
+.langSelect{
+box-sizing: border-box;
+font-weight: lighter;
+color: grey;
+font-size: 90%;
+position: relative;
+bottom: 60px;
+left: 30px;
+}
+
+.footer{
+    background-color: #262626;
+    padding: 16px;
+}
+
+.footer a{ 
+  text-decoration: none;
+  color: white;
+  padding-left: 30px;
+}
+
+.hop {
+	animation: bounce 3s infinite;
+}
+@keyframes bounce {
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+}
